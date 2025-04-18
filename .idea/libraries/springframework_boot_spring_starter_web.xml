@@ -1,0 +1,43 @@
+<component name="libraryTable">
+  <library name="springframework.boot.spring.starter.web" type="repository">
+    <properties maven-id="org.springframework.boot:spring-boot-starter-web:3.2.5" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-boot-starter-web-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-boot-starter-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-boot-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-boot-autoconfigure-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-boot-starter-logging-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/logback-classic-1.4.14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/logback-core-1.4.14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-2.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j-to-slf4j-2.21.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j-api-2.21.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jul-to-slf4j-2.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jakarta.annotation-api-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-6.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-jcl-6.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/snakeyaml-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-boot-starter-json-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.15.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-annotations-2.15.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.15.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-datatype-jdk8-2.15.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-datatype-jsr310-2.15.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-module-parameter-names-2.15.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-boot-starter-tomcat-3.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat-embed-core-10.1.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat-embed-el-10.1.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tomcat-embed-websocket-10.1.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-web-6.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-6.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/micrometer-observation-1.12.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/micrometer-commons-1.12.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-6.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-aop-6.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-context-6.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-expression-6.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,30 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site Checker</title>
-</head>
-<body>
-<h1>Перевірка сайту</h1>
-<input type="text" id="url" placeholder="Введіть URL" />
-<button onclick="checkSite()">Перевірити</button>
-<pre id="result"></pre>
-
-<script>
-    function checkSite() {
-        const url = document.getElementById("url").value;
-
-        fetch(`/api/check?url=${encodeURIComponent(url)}`)
-            .then((res) => res.json())
-            .then((data) => {
-                document.getElementById("result").innerText = JSON.stringify(
-                    data,
-                    null,
-                    2
-                );
-            });
-    }
-</script>
-</body>
+    <title>Dashboard</title>
+    <script type="module" crossorigin src="/assets/index-BIR2hONQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Q35gcDo4.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>

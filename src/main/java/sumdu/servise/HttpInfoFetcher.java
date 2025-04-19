@@ -1,4 +1,4 @@
-package main.java.model;
+package sumdu.servise;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,12 +7,28 @@ import java.time.LocalDateTime;
 import javax.net.ssl.HttpsURLConnection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import sumdu.DTO.HttpInfo;
 
+/**
+ Клас для отримання інформації про сайт за допомогою HTTP-запиту
+ */
 public class HttpInfoFetcher {
 
+    /**
+     Виконує HTTP запит GET до вказаного URL та повертає інформацію про нього
+
+     @param urlString URL сайту для отримання інформації
+     @return Об'єкт HttpInfo, що містить отриману інформацію про сайт
+     */
     public static HttpInfo fetchInfo(String urlString) {
         try {
-            URL url = new URL(urlString);
+            String processedUrl = urlString;
+
+            if (!urlString.startsWith("http://") && !urlString.startsWith("https://")) {
+                processedUrl = "https://" + urlString;
+            }
+
+            URL url = new URL(processedUrl);
             InetAddress ipAddress = InetAddress.getByName(url.getHost());
 
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
@@ -37,7 +53,7 @@ public class HttpInfoFetcher {
             String title = doc.title();
 
             return new HttpInfo(
-                    title,
+                    urlString,
                     statusCode,
                     serverInfo != null ? serverInfo : "Немає даних",
                     responseDateTime,
@@ -47,7 +63,7 @@ public class HttpInfoFetcher {
 
         } catch (Exception e) {
             System.out.println("Сталася помилка: " + e.getMessage());
-            return new HttpInfo("Невідомо", -1, "Помилка", LocalDateTime.now().toString(), "Немає", "Невідомо");
+            return new HttpInfo(urlString, -1, "Помилка", LocalDateTime.now().toString(), "Немає", "Невідомо");
         }
     }
 }

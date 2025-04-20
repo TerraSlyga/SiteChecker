@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sumdu.DTO.HttpInfo;
@@ -26,7 +27,7 @@ public class RESTController {
 
      @param url URL сайту для перевірки
 
-     @return Map, що містить інформацію про сайт: URL, код статусу, інформацію про сервер,
+     @return ResponseEntity, що містить інформацію про сайт: URL, код статусу, інформацію про сервер,
      час відповіді, редирект (якщо є) та IP-адресу
      */
 
@@ -45,7 +46,7 @@ public class RESTController {
 
      @param id Ідентифікатор користувача, для якого потрібно отримати інформацію про сайти
 
-     @return Map, де ключ - це порядковий номер сайту, а значення - це Map
+     @return ResponseEntity, де ключ - це порядковий номер сайту, а значення - це Map
      з інформацією про сайт
      */
     @GetMapping("/getsites")
@@ -82,7 +83,7 @@ public class RESTController {
 
      @param url URL сайту, інформацію про який потрібно отримати
 
-     @return Map, що містить інформацію про сайт
+     @return ResponseEntity, що містить інформацію про сайт
      */
     @GetMapping("/getsite")
     public ResponseEntity<String> getSite(@RequestParam String url) {
@@ -120,7 +121,7 @@ public class RESTController {
      @param id  Ідентифікатор користувача
      */
     @PostMapping("/addsite")
-    public void addSite(@RequestParam String url, @RequestParam Integer id) {
+    public ResponseEntity<Map<String, Object>> addSite(@RequestParam String url, @RequestParam Integer id) {
         HttpInfo httpInfo = HttpInfoFetcher.fetchInfo(url);
 
         DbHandler dbHandler = null;
@@ -134,5 +135,17 @@ public class RESTController {
 
         dbHandler.addSite(id, httpInfo);
 
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        String jsonString = gson.toJson(httpInfo);
+
+        Map<String, Object> response = new LinkedHashMap<>();
+        response.put("success", true);
+        response.put("message", "Resource created successfully");
+        response.put("data", jsonString);
+
+        return ResponseEntity.ok()
+                .header("Content-Type", "application/json").
+                body(response);
     }
 }
